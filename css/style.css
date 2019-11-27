@@ -16,15 +16,29 @@ body {
 .header {
     position: relative;
     height: 95vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(126, 213, 111, 0.8), 
-        rgba(40, 180, 131, 0.8)),
-        url(../images/header-bg.jpeg);
+    background-image: url(../images/header-bg.jpeg);
     background-size: cover;
     background-position: top;
 
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+    
+}
+
+.header-layer {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(126, 213, 111, 0.8), 
+        rgba(40, 180, 131, 0.8));
+    background-size: cover;
+    background-position: top;
+    clip-path:  ellipse(100% 80% at 5% 20%);
+    transition: ease-in-out 1s;
+}
+
+.header .header-layer:hover {
+    clip-path:  ellipse(80% 100% at 50% -20%);
 }
 
 .logo-box {
@@ -171,3 +185,44 @@ body {
     animation: moveInBottom .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
+
+/* ################################## */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.element {
+    width: 40%;
+    height: 600px;
+    float: left;
+    background-image: url(http://tympanus.net/codrops-playground/assets/images/cssref/properties/clip-path/cupcakes.jpg);
+    background-size: cover;
+    background-position: -100px 0;
+    background-repeat: no-repeat;
+    clip-path: ellipse(90% 70% at 0% 50%);
+    shape-outside: ellipse(90% 70% at 0% 50%);
+    shape-margin: 2em;
+  }
+  
+  p,
+  h1,
+  h3 {
+    padding: 1em 0;
+  }
+  
+  p {
+    margin-right: 4em;
+  }
+  
+  ul {
+    list-style: circle;
+  }
+  
+  .clear {
+    clear: both;
+  }
+
